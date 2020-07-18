@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import yellow from '../components/images/logo3.png'
 import blue from '../components/images/blue.png'
-import blueSil from '../components/images/blueSil.png'
+import blueSil from '../components/images/blue_sil.png'
 import red from '../components/images/charizard.png'
 import gold from '../components/images/Gold2.png'
 import silver from '../components/images/Silver2.png'
@@ -16,40 +16,39 @@ import Table from 'react-bootstrap/Table'
 const UseraccountComponent: React.FC = () => {
    
     /** Bool state for each game owned */
-    const [blueOwned, setBlueOwned] = useState(false);
-    const [redOwned, setRedOwned] = useState(false);
-    const [yellowOwned, setYellowOwned] = useState(false);
-    const [goldOwned, setGoldOwned] = useState(false);
-    const [silverOwned, setSilverOwned] = useState(false);
-    const [rubyOwned, setRubyOwned] = useState(false);
-    const [sapphireOwned, setSapphireOwned] = useState(false);
-    
-    const [bLogo, setBLogo] = useState();
+    const [blueOwned, setBlueOwned] = useState(true);
+    const [redOwned, setRedOwned] = useState(true);
+    const [yellowOwned, setYellowOwned] = useState(true);
+    const [goldOwned, setGoldOwned] = useState(true);
+    const [silverOwned, setSilverOwned] = useState(true);
+    const [rubyOwned, setRubyOwned] = useState(true);
+    const [sapphireOwned, setSapphireOwned] = useState(true);
 
-    const [pokemonNum, setPokemonNum] = useState([0,1,2,3]);
+    const [blueToggle, setBlueToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/blue.png');
 
-    /** Submit function triggered on game button press */
-    const submit = (evt: any) =>{
+    /** sendGame function triggered on game button press */
+    const sendGame = (evt: any) =>{
         //Prevent Default click action from firing
         evt.preventDefault();
         //value holds 'data-value" from game logo clicked
         let value = evt.target.getAttribute('data-value');
-        let blueLogo = {blue};
 
         //A switch statement to determine which game is owned and swap the logo palette
         switch (value) {
             case 'blue':
                 if(!blueOwned){
-                    console.log("I do own blue");
+                    setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/blue.png');
                     setBlueOwned(true);
-                    console.log("Value of bOwned = " + blueOwned);
+                    console.log("Blue Owned");
+                   
                     
                     
                 }
                 else{
-                    console.log("I do not own blue");
+                    setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/blue_sil.png');
                     setBlueOwned(false);
-                    console.log("Value of bOwned = " + blueOwned);
+                    console.log("Blue Not Owned");
+                    
                 }
                 break;
             case 'red':
@@ -130,31 +129,31 @@ const UseraccountComponent: React.FC = () => {
     }
 
     const pokeOwned = (evt: any) =>{
-
+        console.log("Bulbasaur")
     }
     return (
         <div >
             <div className = "games_owned">
                 <button type= "button" className="game_logo" id="blue"> 
-                    <img src= {blue} id="blue_logo" alt="game logo" onClick={submit} data-value = "blue"></img>
+                    <img src= {blueToggle} id="blue_logo" alt="game logo" onClick={sendGame} data-value = "blue"></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="red"> 
-                    <img src= {red} id="red_logo" alt="game logo" onClick={submit} data-value = "red"></img>
+                    <img src= {red} id="red_logo" alt="game logo" onClick={sendGame} data-value = "red"></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="yellow"> 
-                    <img src= {yellow} id="yellow_logo" alt="game logo" onClick={submit} data-value = "yellow"></img>
+                    <img src= {yellow} id="yellow_logo" alt="game logo" onClick={sendGame} data-value = "yellow"></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="gold"> 
-                    <img src= {gold} id="gold_logo" alt="game logo" onClick={submit} data-value = "gold"></img> 
+                    <img src= {gold} id="gold_logo" alt="game logo" onClick={sendGame} data-value = "gold"></img> 
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="silver"> 
-                    <img src= {silver} id="silver_logo" alt="game logo" onClick={submit} data-value = "silver"></img> 
+                    <img src= {silver} id="silver_logo" alt="game logo" onClick={sendGame} data-value = "silver"></img> 
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="ruby"> 
-                    <img src= {ruby} id="ruby_logo" alt="game logo" onClick={submit} data-value = "ruby"></img> 
+                    <img src= {ruby} id="ruby_logo" alt="game logo" onClick={sendGame} data-value = "ruby"></img> 
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="sapphire"> 
-                    <img src= {sapphire} id="sapphire_logo" alt="game logo" onClick={submit} data-value = "sapphire"></img> 
+                    <img src= {sapphire} id="sapphire_logo" alt="game logo" onClick={sendGame} data-value = "sapphire"></img> 
                 </button> &nbsp;
             </div>
 
@@ -166,7 +165,7 @@ const UseraccountComponent: React.FC = () => {
                     <td className = "table_pokemon_id">1</td>
                     <td className = "table_pokemon_image"><img src = {bulba} onClick={pokeOwned}></img></td>
                     <td className = "table_pokemon_name">Bulbasaur</td>
-                    <td className = "table_pokemon_logo">{pokemonNum}</td>
+                    <td className = "table_pokemon_logo">&#123;Game Logos&#125;</td>
                     </tr>
                 </tbody>
 
