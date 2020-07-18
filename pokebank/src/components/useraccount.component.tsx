@@ -25,6 +25,12 @@ const UseraccountComponent: React.FC = () => {
     const [sapphireOwned, setSapphireOwned] = useState(true);
 
     const [blueToggle, setBlueToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/blue.png');
+    const [redToggle, setRedToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/charizard.png');
+    const [yellowToggle, setYellowToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/logo3.png');
+    const [goldToggle, setGoldToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/Gold2.png');
+    const [silverToggle, setSilverToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/Silver2.png');
+    const [rubyToggle, setRubyToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/ruby2.png');
+    const [sapphireToggle, setSapphireToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/sapphire2.png');
 
     /** sendGame function triggered on game button press */
     const sendGame = (evt: any) =>{
@@ -38,90 +44,74 @@ const UseraccountComponent: React.FC = () => {
             case 'blue':
                 if(!blueOwned){
                     setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/blue.png');
-                    setBlueOwned(true);
-                    console.log("Blue Owned");
-                   
-                    
+                    setBlueOwned(true);              
                     
                 }
                 else{
                     setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/blue_sil.png');
                     setBlueOwned(false);
-                    console.log("Blue Not Owned");
                     
                 }
                 break;
             case 'red':
                 if(!redOwned){
-                    console.log("I do own red");
+                    setRedToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/charizard.png');
                     setRedOwned(true);
-                    console.log("Value of rOwned = " + redOwned);
                 }
                 else{
-                    console.log("I do not own red");
+                    setRedToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/red_sil.png');
                     setRedOwned(false);
-                    console.log("Value of rOwned = " + redOwned);
                 }
                 break;
             case 'yellow':
                 if(!yellowOwned){
-                    console.log("I do own yellow");
+                    setYellowToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/logo3.png');
                     setYellowOwned(true);
-                    console.log("Value of yOwned = " + yellowOwned);
                 }
                 else{
-                    console.log("I do not own yellow");
+                    setYellowToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/yellow_sil.png');
                     setYellowOwned(false);
-                    console.log("Value of yOwned = " + yellowOwned);
                 }
                 break;
             case 'gold':
                 if(!goldOwned){
-                    console.log("I do own gold");
+                    setGoldToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/Gold2.png');
                     setGoldOwned(true);
-                    console.log("Value of gOwned = " + goldOwned);
                 }
                 else{
-                    console.log("I do not own gold");
+                    setGoldToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/gold2_sil.png');
                     setGoldOwned(false);
-                    console.log("Value of gOwned = " + goldOwned);
                 }
                 break;
             case 'silver':
                 if(!silverOwned){
-                    console.log("I do own silver");
+                    setSilverToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/Silver2.png');
                     setSilverOwned(true);
-                    console.log("Value of sOwned = " + silverOwned);
                 }
                 else{
-                    console.log("I do not own silver");
+                    setSilverToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/silver2_sil.png');
                     setSilverOwned(false);
-                    console.log("Value of sOwned = " + silverOwned);
                 }
                 break;
 
             case 'ruby':
                 if(!rubyOwned){
-                    console.log("I do own ruby");
+                    setRubyToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/ruby2.png');
                     setRubyOwned(true);
-                    console.log("Value of rOwned = " + rubyOwned);
                 }
                 else{
-                    console.log("I do not own ruby");
+                    setRubyToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/ruby2_sil.png');
                     setRubyOwned(false);
-                    console.log("Value of rOwned = " + rubyOwned);
                 }
                 break; 
             case 'sapphire':
                 if(!sapphireOwned){
-                    console.log("I do own sapphire");
+                    setSapphireToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/sapphire2.png');
                     setSapphireOwned(true);
-                    console.log("Value of yOwned = " + sapphireOwned);
                 }
                 else{
-                    console.log("I do not own sapphire");
+                    setSapphireToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/sapphire2_sil.png');
                     setSapphireOwned(false);
-                    console.log("Value of yOwned = " + sapphireOwned);
                 }
                 break;   
         }
@@ -138,22 +128,22 @@ const UseraccountComponent: React.FC = () => {
                     <img src= {blueToggle} id="blue_logo" alt="game logo" onClick={sendGame} data-value = "blue"></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="red"> 
-                    <img src= {red} id="red_logo" alt="game logo" onClick={sendGame} data-value = "red"></img>
+                    <img src= {redToggle} id="red_logo" alt="game logo" onClick={sendGame} data-value = "red"></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="yellow"> 
-                    <img src= {yellow} id="yellow_logo" alt="game logo" onClick={sendGame} data-value = "yellow"></img>
+                    <img src= {yellowToggle} id="yellow_logo" alt="game logo" onClick={sendGame} data-value = "yellow"></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="gold"> 
-                    <img src= {gold} id="gold_logo" alt="game logo" onClick={sendGame} data-value = "gold"></img> 
+                    <img src= {goldToggle} id="gold_logo" alt="game logo" onClick={sendGame} data-value = "gold"></img> 
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="silver"> 
-                    <img src= {silver} id="silver_logo" alt="game logo" onClick={sendGame} data-value = "silver"></img> 
+                    <img src= {silverToggle} id="silver_logo" alt="game logo" onClick={sendGame} data-value = "silver"></img> 
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="ruby"> 
-                    <img src= {ruby} id="ruby_logo" alt="game logo" onClick={sendGame} data-value = "ruby"></img> 
+                    <img src= {rubyToggle} id="ruby_logo" alt="game logo" onClick={sendGame} data-value = "ruby"></img> 
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="sapphire"> 
-                    <img src= {sapphire} id="sapphire_logo" alt="game logo" onClick={sendGame} data-value = "sapphire"></img> 
+                    <img src= {sapphireToggle} id="sapphire_logo" alt="game logo" onClick={sendGame} data-value = "sapphire"></img> 
                 </button> &nbsp;
             </div>
 
