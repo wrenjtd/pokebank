@@ -10,8 +10,6 @@ function App() {
     <div className = "userarea_container">
       <BrowserRouter>
 
-      
-     {/* <LoginComponent></LoginComponent> */}
      <UserareaComponent></UserareaComponent>
   <Switch>
       <Route path ="/login" component= {LoginComponent}></Route>

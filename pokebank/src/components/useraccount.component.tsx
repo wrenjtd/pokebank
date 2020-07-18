@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import yellow from '../components/images/logo3.png'
 import blue from '../components/images/blue.png'
+import blueSil from '../components/images/blueSil.png'
 import red from '../components/images/charizard.png'
 import gold from '../components/images/Gold2.png'
 import silver from '../components/images/Silver2.png'
+import ruby from '../components/images/ruby2.png'
+import sapphire from '../components/images/sapphire2.png'
 import bulba from '../components/images/bulb2.png'
+
 import Table from 'react-bootstrap/Table'
 
 
 
 const UseraccountComponent: React.FC = () => {
+   
     /** Bool state for each game owned */
     const [blueOwned, setBlueOwned] = useState(false);
     const [redOwned, setRedOwned] = useState(false);
@@ -123,6 +128,10 @@ const UseraccountComponent: React.FC = () => {
         }
         
     }
+
+    const pokeOwned = (evt: any) =>{
+
+    }
     return (
         <div >
             <div className = "games_owned">
@@ -141,6 +150,12 @@ const UseraccountComponent: React.FC = () => {
                 <button type= "button" className="game_logo" id="silver"> 
                     <img src= {silver} id="silver_logo" alt="game logo" onClick={submit} data-value = "silver"></img> 
                 </button> &nbsp;
+                <button type= "button" className="game_logo" id="ruby"> 
+                    <img src= {ruby} id="ruby_logo" alt="game logo" onClick={submit} data-value = "ruby"></img> 
+                </button> &nbsp;
+                <button type= "button" className="game_logo" id="sapphire"> 
+                    <img src= {sapphire} id="sapphire_logo" alt="game logo" onClick={submit} data-value = "sapphire"></img> 
+                </button> &nbsp;
             </div>
 
 
@@ -149,7 +164,7 @@ const UseraccountComponent: React.FC = () => {
                 <tbody>
                     <tr className="table-warning">
                     <td className = "table_pokemon_id">1</td>
-                    <td className = "table_pokemon_image"><img src = {bulba} ></img></td>
+                    <td className = "table_pokemon_image"><img src = {bulba} onClick={pokeOwned}></img></td>
                     <td className = "table_pokemon_name">Bulbasaur</td>
                     <td className = "table_pokemon_logo">{pokemonNum}</td>
                     </tr>
