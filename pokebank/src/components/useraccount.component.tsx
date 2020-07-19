@@ -25,7 +25,7 @@ const UseraccountComponent: React.FC = () => {
 
     /** Pokemon */
 
-    const [bulb001Toggle, setBulb001Toggle] = useState(`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/pokemon/gen_1/pokemon/${setPokemonNum}.png`);
+    const [pokemon1, setPokemon1] = useState(`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/pokemon/gen_1/pokemon/${setPokemonNum}.png`);
     
 
     /** sendGame function triggered on game button press */
@@ -35,17 +35,23 @@ const UseraccountComponent: React.FC = () => {
         //value holds 'data-value' from game logo clicked
         let value = evt.target.getAttribute('data-value');
         
-        // let gameNumberString = evt.target.getAttribute('game-number');
-        // let gameNumber = parseInt(gameNumberString);
+        let gameNumberString = evt.target.getAttribute('game-number');
+        let gameNumber = parseInt(gameNumberString);
+
+
+        function switchGame(selectedGame : string) {
+            
+        }
+
         if(value == 'blue'){
             if(!pokemonGames[0]){
                 setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo.png');
-                pokemonGames[0] = true;
+                pokemonGames[gameNumber] = true;
                 console.log("change to true");
             }
-            else if(pokemonGames[0]){
+            else{
                 setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo_sil.png');
-                pokemonGames[0] = false;
+                pokemonGames[gameNumber] = false;
                 console.log("change to false");
             }
         }
@@ -163,10 +169,10 @@ const UseraccountComponent: React.FC = () => {
                     <img src= {blueToggle} id="blue_logo" alt="game logo" onClick={sendGame} data-value = "blue" game-number = '0'></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="red"> 
-                    <img src= {redToggle} id="red_logo" alt="game logo" onClick={sendGame} data-value = "red"></img>
+                    <img src= {redToggle} id="red_logo" alt="game logo" onClick={sendGame} data-value = "red" game-number = '1'></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="yellow"> 
-                    <img src= {yellowToggle} id="yellow_logo" alt="game logo" onClick={sendGame} data-value = "yellow"></img>
+                    <img src= {yellowToggle} id="yellow_logo" alt="game logo" onClick={sendGame} data-value = "yellow" game-number = '2'></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="gold"> 
                     <img src= {goldToggle} id="gold_logo" alt="game logo" onClick={sendGame} data-value = "gold"></img> 
@@ -200,7 +206,7 @@ const UseraccountComponent: React.FC = () => {
                 <tbody>
                     <tr className="table-warning">
                     <td className = "table_pokemon_id">1</td>
-                    <td className = "table_pokemon_image"><img src = {bulb001Toggle} onClick={pokeOwned}></img></td>
+                    <td className = "table_pokemon_image"><img src = {pokemon1} onClick={pokeOwned}></img></td>
                     <td className = "table_pokemon_name">Bulbasaur</td>
                     <td className = "table_pokemon_logo">&#123;Game Logos&#125;</td>
                     </tr>
