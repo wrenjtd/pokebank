@@ -45,12 +45,12 @@ const UseraccountComponent: React.FC = () => {
 
         if(value == 'blue'){
             if(!pokemonGames[0]){
-                setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo.png');
+                setBlueToggle(`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/${gameNumber}_logo.png`);
                 pokemonGames[gameNumber] = true;
                 console.log("change to true");
             }
             else{
-                setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo_sil.png');
+                setBlueToggle(`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/${gameNumber}_logo_sil.png`);
                 pokemonGames[gameNumber] = false;
                 console.log("change to false");
             }
@@ -166,13 +166,13 @@ const UseraccountComponent: React.FC = () => {
         <div >
             <div className = "games_owned">
                 <button type= "button" className="game_logo" id="blue"> 
-                    <img src= {blueToggle} id="blue_logo" alt="game logo" onClick={sendGame} data-value = "blue" game-number = '0'></img>
+                    <img src= {blueToggle} id="blue_logo" alt="game logo" onClick={sendGame} data-value = "blue" game-number = '1'></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="red"> 
-                    <img src= {redToggle} id="red_logo" alt="game logo" onClick={sendGame} data-value = "red" game-number = '1'></img>
+                    <img src= {redToggle} id="red_logo" alt="game logo" onClick={sendGame} data-value = "red" game-number = '2'></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="yellow"> 
-                    <img src= {yellowToggle} id="yellow_logo" alt="game logo" onClick={sendGame} data-value = "yellow" game-number = '2'></img>
+                    <img src= {yellowToggle} id="yellow_logo" alt="game logo" onClick={sendGame} data-value = "yellow" game-number = '3'></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="gold"> 
                     <img src= {goldToggle} id="gold_logo" alt="game logo" onClick={sendGame} data-value = "gold"></img> 
