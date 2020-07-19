@@ -48,114 +48,114 @@ const UseraccountComponent: React.FC = () => {
         switch (value) {
             case 'blue':
                 if(!blueOwned){
-                    setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/blue_logo.png');
+                    setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo.png');
                     setBlueOwned(true);              
                     
                 }
                 else{
-                    setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/blue_logo_sil.png');
+                    setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo_sil.png');
                     setBlueOwned(false);
                     
                 }
                 break;
             case 'red':
                 if(!redOwned){
-                    setRedToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/red_logo.png');
+                    setRedToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/red_logo.png');
                     setRedOwned(true);
                 }
                 else{
-                    setRedToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/red_logo_sil.png');
+                    setRedToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/red_logo_sil.png');
                     setRedOwned(false);
                 }
                 break;
             case 'yellow':
                 if(!yellowOwned){
-                    setYellowToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/yellow_logo.png');
+                    setYellowToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/yellow_logo.png');
                     setYellowOwned(true);
                 }
                 else{
-                    setYellowToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/yellow_logo_sil.png');
+                    setYellowToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/yellow_logo_sil.png');
                     setYellowOwned(false);
                 }
                 break;
             case 'gold':
                 if(!goldOwned){
-                    setGoldToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/gold_logo.png');
+                    setGoldToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/gold_logo.png');
                     setGoldOwned(true);
                 }
                 else{
-                    setGoldToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/gold_logo_sil.png');
+                    setGoldToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/gold_logo_sil.png');
                     setGoldOwned(false);
                 }
                 break;
             case 'silver':
                 if(!silverOwned){
-                    setSilverToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/silver_logo.png');
+                    setSilverToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/silver_logo.png');
                     setSilverOwned(true);
                 }
                 else{
-                    setSilverToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/silver_logo_sil.png');
+                    setSilverToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/silver_logo_sil.png');
                     setSilverOwned(false);
                 }
                 break;
 
             case 'ruby':
                 if(!rubyOwned){
-                    setRubyToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/ruby_logo.png');
+                    setRubyToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/ruby_logo.png');
                     setRubyOwned(true);
                 }
                 else{
-                    setRubyToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/ruby_logo_sil.png');
+                    setRubyToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/ruby_logo_sil.png');
                     setRubyOwned(false);
                 }
                 break; 
             case 'sapphire':
                 if(!sapphireOwned){
-                    setSapphireToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/sapphire_logo.png');
+                    setSapphireToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/sapphire_logo.png');
                     setSapphireOwned(true);
                 }
                 else{
-                    setSapphireToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/sapphire_logo_sil.png');
+                    setSapphireToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/sapphire_logo_sil.png');
                     setSapphireOwned(false);
                 }
                 break;
             case 'diamond':
                 if(!diamondOwned){
-                    setDiamondToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/diamond_logo.png');
+                    setDiamondToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/diamond_logo.png');
                     setDiamondOwned(true);
                 }
                 else{
-                    setDiamondToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/diamond_logo_sil.png');
+                    setDiamondToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/diamond_logo_sil.png');
                     setDiamondOwned(false);
                 }
                 break;   
             case 'pearl':
                 if(!pearlOwned){
-                    setPearlToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/pearl_logo.png');
+                    setPearlToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/pearl_logo.png');
                     setPearlOwned(true);
                 }
                 else{
-                    setPearlToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/pearl_logo_sil.png');
+                    setPearlToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/pearl_logo_sil.png');
                     setPearlOwned(false);
                 }
                 break;   
                 case 'black':
                 if(!blackOwned){
-                    setBlackToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/black_logo.png');
+                    setBlackToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/black_logo.png');
                     setBlackOwned(true);
                 }
                 else{
-                    setBlackToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/black_logo_sil.png');
+                    setBlackToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/black_logo_sil.png');
                     setBlackOwned(false);
                 }
                 break;   
                 case 'white':
                 if(!whiteOwned){
-                    setWhiteToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/white_logo.png');
+                    setWhiteToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/white_logo.png');
                     setWhiteOwned(true);
                 }
                 else{
-                    setWhiteToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/white_logo_sil.png');
+                    setWhiteToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/white_logo_sil.png');
                     setWhiteOwned(false);
                 }
                 break;      
