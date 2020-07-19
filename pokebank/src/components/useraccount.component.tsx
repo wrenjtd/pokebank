@@ -1,12 +1,4 @@
 import React, { useState } from 'react';
-import yellow from '../components/images/logo3.png'
-import blue from '../components/images/blue.png'
-import blueSil from '../components/images/blue_sil.png'
-import red from '../components/images/charizard.png'
-import gold from '../components/images/Gold2.png'
-import silver from '../components/images/Silver2.png'
-import ruby from '../components/images/ruby2.png'
-import sapphire from '../components/images/sapphire2.png'
 import bulba from '../components/images/bulb2.png'
 
 import Table from 'react-bootstrap/Table'
@@ -23,14 +15,22 @@ const UseraccountComponent: React.FC = () => {
     const [silverOwned, setSilverOwned] = useState(true);
     const [rubyOwned, setRubyOwned] = useState(true);
     const [sapphireOwned, setSapphireOwned] = useState(true);
+    const [diamondOwned, setDiamondOwned] = useState(true);
+    const [pearlOwned, setPearlOwned] = useState(true);
+    const [blackOwned, setBlackOwned] = useState(true);
+    const [whiteOwned, setWhiteOwned] = useState(true);
 
-    const [blueToggle, setBlueToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/blue.png');
-    const [redToggle, setRedToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/charizard.png');
-    const [yellowToggle, setYellowToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/logo3.png');
-    const [goldToggle, setGoldToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/Gold2.png');
-    const [silverToggle, setSilverToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/Silver2.png');
-    const [rubyToggle, setRubyToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/ruby2.png');
-    const [sapphireToggle, setSapphireToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/sapphire2.png');
+    const [blueToggle, setBlueToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/blue_logo.png');
+    const [redToggle, setRedToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/red_logo.png');
+    const [yellowToggle, setYellowToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/yellow_logo.png');
+    const [goldToggle, setGoldToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/gold_logo.png');
+    const [silverToggle, setSilverToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/silver_logo.png');
+    const [rubyToggle, setRubyToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/ruby_logo.png');
+    const [sapphireToggle, setSapphireToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/sapphire_logo.png');
+    const [diamondToggle, setDiamondToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/diamond_logo.png');
+    const [pearlToggle, setPearlToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/pearl_logo.png');
+    const [blackToggle, setBlackToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/black_logo.png');
+    const [whiteToggle, setWhiteToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/white_logo.png');
 
     /** sendGame function triggered on game button press */
     const sendGame = (evt: any) =>{
@@ -43,77 +43,117 @@ const UseraccountComponent: React.FC = () => {
         switch (value) {
             case 'blue':
                 if(!blueOwned){
-                    setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/blue.png');
+                    setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/blue_logo.png');
                     setBlueOwned(true);              
                     
                 }
                 else{
-                    setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/blue_sil.png');
+                    setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/blue_logo_sil.png');
                     setBlueOwned(false);
                     
                 }
                 break;
             case 'red':
                 if(!redOwned){
-                    setRedToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/charizard.png');
+                    setRedToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/red_logo.png');
                     setRedOwned(true);
                 }
                 else{
-                    setRedToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/red_sil.png');
+                    setRedToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/red_logo_sil.png');
                     setRedOwned(false);
                 }
                 break;
             case 'yellow':
                 if(!yellowOwned){
-                    setYellowToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/logo3.png');
+                    setYellowToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/yellow_logo.png');
                     setYellowOwned(true);
                 }
                 else{
-                    setYellowToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/yellow_sil.png');
+                    setYellowToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/yellow_logo_sil.png');
                     setYellowOwned(false);
                 }
                 break;
             case 'gold':
                 if(!goldOwned){
-                    setGoldToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/Gold2.png');
+                    setGoldToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/gold_logo.png');
                     setGoldOwned(true);
                 }
                 else{
-                    setGoldToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/gold2_sil.png');
+                    setGoldToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/gold_logo_sil.png');
                     setGoldOwned(false);
                 }
                 break;
             case 'silver':
                 if(!silverOwned){
-                    setSilverToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/Silver2.png');
+                    setSilverToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/silver_logo.png');
                     setSilverOwned(true);
                 }
                 else{
-                    setSilverToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/silver2_sil.png');
+                    setSilverToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/silver_logo_sil.png');
                     setSilverOwned(false);
                 }
                 break;
 
             case 'ruby':
                 if(!rubyOwned){
-                    setRubyToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/ruby2.png');
+                    setRubyToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/ruby_logo.png');
                     setRubyOwned(true);
                 }
                 else{
-                    setRubyToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/ruby2_sil.png');
+                    setRubyToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/ruby_logo_sil.png');
                     setRubyOwned(false);
                 }
                 break; 
             case 'sapphire':
                 if(!sapphireOwned){
-                    setSapphireToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/sapphire2.png');
+                    setSapphireToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/sapphire_logo.png');
                     setSapphireOwned(true);
                 }
                 else{
-                    setSapphireToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/sapphire2_sil.png');
+                    setSapphireToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/sapphire_logo_sil.png');
                     setSapphireOwned(false);
                 }
+                break;
+            case 'diamond':
+                if(!diamondOwned){
+                    setDiamondToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/diamond_logo.png');
+                    setDiamondOwned(true);
+                }
+                else{
+                    setDiamondToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/diamond_logo_sil.png');
+                    setDiamondOwned(false);
+                }
                 break;   
+            case 'pearl':
+                if(!pearlOwned){
+                    setPearlToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/pearl_logo.png');
+                    setPearlOwned(true);
+                }
+                else{
+                    setPearlToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/pearl_logo_sil.png');
+                    setPearlOwned(false);
+                }
+                break;   
+                case 'black':
+                if(!blackOwned){
+                    setBlackToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/black_logo.png');
+                    setBlackOwned(true);
+                }
+                else{
+                    setBlackToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/black_logo_sil.png');
+                    setBlackOwned(false);
+                }
+                break;   
+                case 'white':
+                if(!whiteOwned){
+                    setWhiteToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/white_logo.png');
+                    setWhiteOwned(true);
+                }
+                else{
+                    setWhiteToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/white_logo_sil.png');
+                    setWhiteOwned(false);
+                }
+                break;      
         }
         
     }
@@ -144,6 +184,18 @@ const UseraccountComponent: React.FC = () => {
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="sapphire"> 
                     <img src= {sapphireToggle} id="sapphire_logo" alt="game logo" onClick={sendGame} data-value = "sapphire"></img> 
+                </button> &nbsp;
+                <button type= "button" className="game_logo" id="diamond"> 
+                    <img src= {diamondToggle} id="diamond_logo" alt="game logo" onClick={sendGame} data-value = "diamond"></img> 
+                </button> &nbsp;
+                <button type= "button" className="game_logo" id="pearl"> 
+                    <img src= {pearlToggle} id="pearl_logo" alt="game logo" onClick={sendGame} data-value = "pearl"></img> 
+                </button> &nbsp;
+                <button type= "button" className="game_logo" id="black"> 
+                    <img src= {blackToggle} id="black_logo" alt="game logo" onClick={sendGame} data-value = "black"></img> 
+                </button> &nbsp;
+                <button type= "button" className="game_logo" id="white"> 
+                    <img src= {whiteToggle} id="white_logo" alt="game logo" onClick={sendGame} data-value = "white"></img> 
                 </button> &nbsp;
             </div>
 
