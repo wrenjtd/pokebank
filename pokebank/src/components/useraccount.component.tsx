@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import bulba from '../components/images/bulb2.png'
-
 import Table from 'react-bootstrap/Table'
 
 
@@ -31,6 +29,13 @@ const UseraccountComponent: React.FC = () => {
     const [pearlToggle, setPearlToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/pearl_logo.png');
     const [blackToggle, setBlackToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/black_logo.png');
     const [whiteToggle, setWhiteToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/white_logo.png');
+
+
+    /** Pokemon */
+
+    const [bulb001, setBulb001] = useState(true);
+    const [bulb001Toggle, setBulb001Toggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/pokemon/gen_1/pokemon/001.png');
+    
 
     /** sendGame function triggered on game button press */
     const sendGame = (evt: any) =>{
@@ -205,7 +210,7 @@ const UseraccountComponent: React.FC = () => {
                 <tbody>
                     <tr className="table-warning">
                     <td className = "table_pokemon_id">1</td>
-                    <td className = "table_pokemon_image"><img src = {bulba} onClick={pokeOwned}></img></td>
+                    <td className = "table_pokemon_image"><img src = {bulb001Toggle} onClick={pokeOwned}></img></td>
                     <td className = "table_pokemon_name">Bulbasaur</td>
                     <td className = "table_pokemon_logo">&#123;Game Logos&#125;</td>
                     </tr>
