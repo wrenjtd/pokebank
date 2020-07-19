@@ -5,18 +5,10 @@ import Table from 'react-bootstrap/Table'
 
 const UseraccountComponent: React.FC = () => {
    
-    /** Bool state for each game owned */
-    const [blueOwned, setBlueOwned] = useState(true);
-    const [redOwned, setRedOwned] = useState(true);
-    const [yellowOwned, setYellowOwned] = useState(true);
-    const [goldOwned, setGoldOwned] = useState(true);
-    const [silverOwned, setSilverOwned] = useState(true);
-    const [rubyOwned, setRubyOwned] = useState(true);
-    const [sapphireOwned, setSapphireOwned] = useState(true);
-    const [diamondOwned, setDiamondOwned] = useState(true);
-    const [pearlOwned, setPearlOwned] = useState(true);
-    const [blackOwned, setBlackOwned] = useState(true);
-    const [whiteOwned, setWhiteOwned] = useState(true);
+
+    let pokemonGames: boolean [] = [true, false, true, true, true, false, true, true, true, true, true];
+    const [gamesOwned, setGamesOwned] = useState(pokemonGames);    
+    let setPokemonNum : number = 1;
 
     const [blueToggle, setBlueToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo.png');
     const [redToggle, setRedToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/red_logo.png');
@@ -33,144 +25,142 @@ const UseraccountComponent: React.FC = () => {
 
     /** Pokemon */
 
-    const [bulb001, setBulb001] = useState(true);
-    const [bulb001Toggle, setBulb001Toggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/pokemon/gen_1/pokemon/001.png');
+    const [bulb001Toggle, setBulb001Toggle] = useState(`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/pokemon/gen_1/pokemon/${setPokemonNum}.png`);
     
 
     /** sendGame function triggered on game button press */
     const sendGame = (evt: any) =>{
         //Prevent Default click action from firing
         evt.preventDefault();
-        //value holds 'data-value" from game logo clicked
+        //value holds 'data-value' from game logo clicked
         let value = evt.target.getAttribute('data-value');
+        
+        // let gameNumberString = evt.target.getAttribute('game-number');
+        // let gameNumber = parseInt(gameNumberString);
+        if(value == 'blue'){
+            if(!pokemonGames[0]){
+                setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo.png');
+                pokemonGames[0] = true;
+                console.log("change to true");
+            }
+            else if(pokemonGames[0]){
+                setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo_sil.png');
+                pokemonGames[0] = false;
+                console.log("change to false");
+            }
+        }
 
         //A switch statement to determine which game is owned and swap the logo palette
         switch (value) {
-            case 'blue':
-                if(!blueOwned){
-                    setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo.png');
-                    setBlueOwned(true);              
+            // case 'blue':
+            //     if(!pokemonGames[0]){
+            //         setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo.png');
+            //         pokemonGames[0] = true;              
                     
-                }
-                else{
-                    setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo_sil.png');
-                    setBlueOwned(false);
+            //     }
+            //     else{
+            //         setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo_sil.png');
+            //         pokemonGames[0] = false; 
                     
-                }
-                break;
+            //     }
+            //     break;
             case 'red':
-                if(!redOwned){
+                if(!pokemonGames[1]){
                     setRedToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/red_logo.png');
-                    setRedOwned(true);
+                    pokemonGames[1] = true; 
                 }
                 else{
                     setRedToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/red_logo_sil.png');
-                    setRedOwned(false);
+                    pokemonGames[1] = false; 
                 }
                 break;
             case 'yellow':
-                if(!yellowOwned){
+                if(!pokemonGames[2]){
                     setYellowToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/yellow_logo.png');
-                    setYellowOwned(true);
+                    pokemonGames[2] = true; 
                 }
                 else{
                     setYellowToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/yellow_logo_sil.png');
-                    setYellowOwned(false);
+                    pokemonGames[2] = false; 
                 }
                 break;
             case 'gold':
-                if(!goldOwned){
+                if(!pokemonGames[3]){
                     setGoldToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/gold_logo.png');
-                    setGoldOwned(true);
-                }
+                    pokemonGames[3] = true;                 }
                 else{
                     setGoldToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/gold_logo_sil.png');
-                    setGoldOwned(false);
-                }
+                    pokemonGames[3] = true;                 }
                 break;
             case 'silver':
-                if(!silverOwned){
+                if(!pokemonGames[4]){
                     setSilverToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/silver_logo.png');
-                    setSilverOwned(true);
-                }
+                    pokemonGames[4] = true;                 }
                 else{
                     setSilverToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/silver_logo_sil.png');
-                    setSilverOwned(false);
-                }
+                    pokemonGames[0] = true;                 }
                 break;
 
             case 'ruby':
-                if(!rubyOwned){
+                if(!pokemonGames[0]){
                     setRubyToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/ruby_logo.png');
-                    setRubyOwned(true);
-                }
+                    pokemonGames[0] = true;                 }
                 else{
                     setRubyToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/ruby_logo_sil.png');
-                    setRubyOwned(false);
-                }
+                    pokemonGames[0] = true;                 }
                 break; 
             case 'sapphire':
-                if(!sapphireOwned){
+                if(!pokemonGames[0]){
                     setSapphireToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/sapphire_logo.png');
-                    setSapphireOwned(true);
-                }
+                    pokemonGames[0] = true;                 }
                 else{
                     setSapphireToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/sapphire_logo_sil.png');
-                    setSapphireOwned(false);
-                }
+                    pokemonGames[0] = true;                 }
                 break;
             case 'diamond':
-                if(!diamondOwned){
+                if(!pokemonGames[0]){
                     setDiamondToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/diamond_logo.png');
-                    setDiamondOwned(true);
-                }
+                    pokemonGames[0] = true;                 }
                 else{
                     setDiamondToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/diamond_logo_sil.png');
-                    setDiamondOwned(false);
-                }
+                    pokemonGames[0] = true;                 }
                 break;   
             case 'pearl':
-                if(!pearlOwned){
+                if(!pokemonGames[0]){
                     setPearlToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/pearl_logo.png');
-                    setPearlOwned(true);
-                }
+                    pokemonGames[0] = true;                 }
                 else{
                     setPearlToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/pearl_logo_sil.png');
-                    setPearlOwned(false);
-                }
+                    pokemonGames[0] = true;                 }
                 break;   
                 case 'black':
-                if(!blackOwned){
+                if(!pokemonGames[0]){
                     setBlackToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/black_logo.png');
-                    setBlackOwned(true);
-                }
+                    pokemonGames[0] = true;                 }
                 else{
                     setBlackToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/black_logo_sil.png');
-                    setBlackOwned(false);
-                }
+                    pokemonGames[0] = true;                 }
                 break;   
                 case 'white':
-                if(!whiteOwned){
+                if(!pokemonGames[0]){
                     setWhiteToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/white_logo.png');
-                    setWhiteOwned(true);
-                }
+                    pokemonGames[10] = true;                 }
                 else{
                     setWhiteToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/white_logo_sil.png');
-                    setWhiteOwned(false);
-                }
+                    pokemonGames[10] = true;                 }
                 break;      
         }
         
     }
 
     const pokeOwned = (evt: any) =>{
-        console.log("Bulbasaur")
+        console.log(gamesOwned[1]);
     }
     return (
         <div >
             <div className = "games_owned">
                 <button type= "button" className="game_logo" id="blue"> 
-                    <img src= {blueToggle} id="blue_logo" alt="game logo" onClick={sendGame} data-value = "blue"></img>
+                    <img src= {blueToggle} id="blue_logo" alt="game logo" onClick={sendGame} data-value = "blue" game-number = '0'></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="red"> 
                     <img src= {redToggle} id="red_logo" alt="game logo" onClick={sendGame} data-value = "red"></img>
