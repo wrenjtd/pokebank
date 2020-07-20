@@ -6,13 +6,13 @@ import Table from 'react-bootstrap/Table'
 const UseraccountComponent: React.FC = () => {
    
 
-    let pokemonGames: boolean [] = [true, false, true, true, true, false, true, true, true, true, true];
+    let pokemonGames: boolean [] = [true, true, true, true, true, true, true, true, true, true, true, true];
     const [gamesOwned, setGamesOwned] = useState(pokemonGames);    
-    let setPokemonNum : number = 1;
-
-    const [blueToggle, setBlueToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo.png');
-    const [redToggle, setRedToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/red_logo.png');
-    const [yellowToggle, setYellowToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/yellow_logo.png');
+    let setPokemonNum: number = 1;
+    const [gameToggle, setGameToggle] = useState("https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/1_logo.png");
+    const [blueToggle, setBlueToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/1_logo.png');
+    const [redToggle, setRedToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/2_logo.png');
+    const [yellowToggle, setYellowToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/3_logo.png');
     const [goldToggle, setGoldToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/gold_logo.png');
     const [silverToggle, setSilverToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/silver_logo.png');
     const [rubyToggle, setRubyToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/ruby_logo.png');
@@ -37,125 +37,17 @@ const UseraccountComponent: React.FC = () => {
         
         let gameNumberString = evt.target.getAttribute('game-number');
         let gameNumber = parseInt(gameNumberString);
-
-
-        function switchGame(selectedGame : string) {
-            
-        }
-
-        if(value == 'blue'){
-            if(!pokemonGames[0]){
-                setBlueToggle(`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/${gameNumber}_logo.png`);
+        
+            if(!pokemonGames[gameNumber]){
+                console.log(pokemonGames[gameNumber]);
+               setGameToggle(`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/${gameNumber}_logo.png`);
                 pokemonGames[gameNumber] = true;
-                console.log("change to true");
             }
-            else{
-                setBlueToggle(`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/${gameNumber}_logo_sil.png`);
+            else if(pokemonGames[gameNumber]){
+                console.log(pokemonGames[gameNumber]);
+                setGameToggle(`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/${gameNumber}_logo_sil.png`);
                 pokemonGames[gameNumber] = false;
-                console.log("change to false");
             }
-        }
-
-        //A switch statement to determine which game is owned and swap the logo palette
-        switch (value) {
-            // case 'blue':
-            //     if(!pokemonGames[0]){
-            //         setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo.png');
-            //         pokemonGames[0] = true;              
-                    
-            //     }
-            //     else{
-            //         setBlueToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/blue_logo_sil.png');
-            //         pokemonGames[0] = false; 
-                    
-            //     }
-            //     break;
-            case 'red':
-                if(!pokemonGames[1]){
-                    setRedToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/red_logo.png');
-                    pokemonGames[1] = true; 
-                }
-                else{
-                    setRedToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/red_logo_sil.png');
-                    pokemonGames[1] = false; 
-                }
-                break;
-            case 'yellow':
-                if(!pokemonGames[2]){
-                    setYellowToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/yellow_logo.png');
-                    pokemonGames[2] = true; 
-                }
-                else{
-                    setYellowToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/yellow_logo_sil.png');
-                    pokemonGames[2] = false; 
-                }
-                break;
-            case 'gold':
-                if(!pokemonGames[3]){
-                    setGoldToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/gold_logo.png');
-                    pokemonGames[3] = true;                 }
-                else{
-                    setGoldToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/gold_logo_sil.png');
-                    pokemonGames[3] = true;                 }
-                break;
-            case 'silver':
-                if(!pokemonGames[4]){
-                    setSilverToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/silver_logo.png');
-                    pokemonGames[4] = true;                 }
-                else{
-                    setSilverToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/silver_logo_sil.png');
-                    pokemonGames[0] = true;                 }
-                break;
-
-            case 'ruby':
-                if(!pokemonGames[0]){
-                    setRubyToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/ruby_logo.png');
-                    pokemonGames[0] = true;                 }
-                else{
-                    setRubyToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/ruby_logo_sil.png');
-                    pokemonGames[0] = true;                 }
-                break; 
-            case 'sapphire':
-                if(!pokemonGames[0]){
-                    setSapphireToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/sapphire_logo.png');
-                    pokemonGames[0] = true;                 }
-                else{
-                    setSapphireToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/sapphire_logo_sil.png');
-                    pokemonGames[0] = true;                 }
-                break;
-            case 'diamond':
-                if(!pokemonGames[0]){
-                    setDiamondToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/diamond_logo.png');
-                    pokemonGames[0] = true;                 }
-                else{
-                    setDiamondToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/diamond_logo_sil.png');
-                    pokemonGames[0] = true;                 }
-                break;   
-            case 'pearl':
-                if(!pokemonGames[0]){
-                    setPearlToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/pearl_logo.png');
-                    pokemonGames[0] = true;                 }
-                else{
-                    setPearlToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/pearl_logo_sil.png');
-                    pokemonGames[0] = true;                 }
-                break;   
-                case 'black':
-                if(!pokemonGames[0]){
-                    setBlackToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/black_logo.png');
-                    pokemonGames[0] = true;                 }
-                else{
-                    setBlackToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/black_logo_sil.png');
-                    pokemonGames[0] = true;                 }
-                break;   
-                case 'white':
-                if(!pokemonGames[0]){
-                    setWhiteToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/white_logo.png');
-                    pokemonGames[10] = true;                 }
-                else{
-                    setWhiteToggle('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/white_logo_sil.png');
-                    pokemonGames[10] = true;                 }
-                break;      
-        }
         
     }
 
@@ -163,10 +55,10 @@ const UseraccountComponent: React.FC = () => {
         console.log(gamesOwned[1]);
     }
     return (
-        <div >
+        <div>
             <div className = "games_owned">
                 <button type= "button" className="game_logo" id="blue"> 
-                    <img src= {blueToggle} id="blue_logo" alt="game logo" onClick={sendGame} data-value = "blue" game-number = '1'></img>
+                    <img src= {gameToggle} id="blue_logo" alt="game logo" onClick={sendGame} data-value = "blue" game-number = '1'></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="red"> 
                     <img src= {redToggle} id="red_logo" alt="game logo" onClick={sendGame} data-value = "red" game-number = '2'></img>
