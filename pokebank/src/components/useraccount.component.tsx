@@ -6,7 +6,8 @@ import Table from 'react-bootstrap/Table'
 const UseraccountComponent: React.FC = () => {
    
 
-    let pokemonGames: boolean [] = [true, true, true, true, true, true, true, true, true, true, true, true];
+    let pokemonGames: boolean [] = [true, false, false, true, true, true, true, true, true, true, true, true];
+    
     const [gamesOwned, setGamesOwned] = useState(pokemonGames);    
     let setPokemonNum: number = 1;
     const [gameToggle, setGameToggle] = useState("https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/1_logo.png");
@@ -54,23 +55,32 @@ const UseraccountComponent: React.FC = () => {
     const pokeOwned = (evt: any) =>{
         console.log(gamesOwned[1]);
     }
+
+    const gamesToggle = (game: string) =>{
+        let intGame = parseInt(game);
+        let testGames: string = (`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/${intGame}_logo.png`);
+        
+        return testGames;
+
+    }
+
     return (
         <div>
             <div className = "games_owned">
                 <button type= "button" className="game_logo" id="blue"> 
-                    <img src= {gameToggle} id="blue_logo" alt="game logo" onClick={sendGame} data-value = "blue" game-number = '1'></img>
+                    <img src= {gamesToggle('0')} id="blue_logo" alt="game logo" onClick={sendGame} data-value = "blue" game-number = '2'></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="red"> 
-                    <img src= {redToggle} id="red_logo" alt="game logo" onClick={sendGame} data-value = "red" game-number = '2'></img>
+                    <img src= {gamesToggle('1')} id="red_logo" alt="game logo" onClick={sendGame} data-value = "red" game-number = '2'></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="yellow"> 
-                    <img src= {yellowToggle} id="yellow_logo" alt="game logo" onClick={sendGame} data-value = "yellow" game-number = '3'></img>
+                    <img src= {gamesToggle('3')} id="yellow_logo" alt="game logo" onClick={sendGame} data-value = "yellow" game-number = '3'></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="gold"> 
-                    <img src= {goldToggle} id="gold_logo" alt="game logo" onClick={sendGame} data-value = "gold"></img> 
+                    <img src= {gamesToggle('4')} id="gold_logo" alt="game logo" onClick={sendGame} data-value = "gold"></img> 
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="silver"> 
-                    <img src= {silverToggle} id="silver_logo" alt="game logo" onClick={sendGame} data-value = "silver"></img> 
+                    <img src= {gamesToggle('5')} id="silver_logo" alt="game logo" onClick={sendGame} data-value = "silver"></img> 
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="ruby"> 
                     <img src= {rubyToggle} id="ruby_logo" alt="game logo" onClick={sendGame} data-value = "ruby"></img> 
