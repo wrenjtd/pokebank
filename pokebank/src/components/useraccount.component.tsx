@@ -11,23 +11,30 @@ const UseraccountComponent: React.FC = () => {
     const [gamesOwned, setGamesOwned] = useState(pokemonGames);    
     let setPokemonNum: number = 1;
     const [gameToggle, setGameToggle] = useState("https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/1_logo.png");
-    const [blueToggle, setBlueToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/1_logo.png');
-    const [redToggle, setRedToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/2_logo.png');
-    const [yellowToggle, setYellowToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/3_logo.png');
-    const [goldToggle, setGoldToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/gold_logo.png');
-    const [silverToggle, setSilverToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/silver_logo.png');
-    const [rubyToggle, setRubyToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/ruby_logo.png');
-    const [sapphireToggle, setSapphireToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/sapphire_logo.png');
-    const [diamondToggle, setDiamondToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/diamond_logo.png');
-    const [pearlToggle, setPearlToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/pearl_logo.png');
-    const [blackToggle, setBlackToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/black_logo.png');
-    const [whiteToggle, setWhiteToggle] = useState('https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/white_logo.png');
 
 
     /** Pokemon */
 
     const [pokemon1, setPokemon1] = useState(`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/pokemon/gen_1/pokemon/${setPokemonNum}.png`);
     
+
+    const gamesToggle = (game: string) =>{
+        
+        let intGame = parseInt(game);
+        let testGames: string = (`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/${intGame}_logo.png`);
+        
+        
+        
+        
+        return testGames;
+
+    }
+
+
+    async function hello(){
+        console.log("Inside async function")
+        return "Hello";
+    }
 
     /** sendGame function triggered on game button press */
     const sendGame = (evt: any) =>{
@@ -41,12 +48,12 @@ const UseraccountComponent: React.FC = () => {
         
             if(!pokemonGames[gameNumber]){
                 console.log(pokemonGames[gameNumber]);
-               setGameToggle(`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/${gameNumber}_logo.png`);
+               gamesToggle(gameNumberString);
                 pokemonGames[gameNumber] = true;
             }
             else if(pokemonGames[gameNumber]){
                 console.log(pokemonGames[gameNumber]);
-                setGameToggle(`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/${gameNumber}_logo_sil.png`);
+                gamesToggle("2");
                 pokemonGames[gameNumber] = false;
             }
         
@@ -56,22 +63,16 @@ const UseraccountComponent: React.FC = () => {
         console.log(gamesOwned[1]);
     }
 
-    const gamesToggle = (game: string) =>{
-        let intGame = parseInt(game);
-        let testGames: string = (`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/game_logos/${intGame}_logo.png`);
-        
-        return testGames;
-
-    }
+    
 
     return (
         <div>
             <div className = "games_owned">
                 <button type= "button" className="game_logo" id="blue"> 
-                    <img src= {gamesToggle('0')} id="blue_logo" alt="game logo" onClick={sendGame} data-value = "blue" game-number = '2'></img>
+                    <img src= {gamesToggle('1')} id="blue_logo" alt="game logo" onClick={sendGame} data-value = "blue" game-number = '1'></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="red"> 
-                    <img src= {gamesToggle('1')} id="red_logo" alt="game logo" onClick={sendGame} data-value = "red" game-number = '2'></img>
+                    <img src= {gamesToggle('2')} id="red_logo" alt="game logo" onClick={sendGame} data-value = "red" game-number = '2'></img>
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="yellow"> 
                     <img src= {gamesToggle('3')} id="yellow_logo" alt="game logo" onClick={sendGame} data-value = "yellow" game-number = '3'></img>
@@ -83,22 +84,22 @@ const UseraccountComponent: React.FC = () => {
                     <img src= {gamesToggle('5')} id="silver_logo" alt="game logo" onClick={sendGame} data-value = "silver"></img> 
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="ruby"> 
-                    <img src= {rubyToggle} id="ruby_logo" alt="game logo" onClick={sendGame} data-value = "ruby"></img> 
+                    <img src= {gamesToggle('6')} id="ruby_logo" alt="game logo" onClick={sendGame} data-value = "ruby"></img> 
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="sapphire"> 
-                    <img src= {sapphireToggle} id="sapphire_logo" alt="game logo" onClick={sendGame} data-value = "sapphire"></img> 
+                    <img src= {gamesToggle('7')} id="sapphire_logo" alt="game logo" onClick={sendGame} data-value = "sapphire"></img> 
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="diamond"> 
-                    <img src= {diamondToggle} id="diamond_logo" alt="game logo" onClick={sendGame} data-value = "diamond"></img> 
+                    <img src= {gamesToggle('8')} id="diamond_logo" alt="game logo" onClick={sendGame} data-value = "diamond"></img> 
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="pearl"> 
-                    <img src= {pearlToggle} id="pearl_logo" alt="game logo" onClick={sendGame} data-value = "pearl"></img> 
+                    <img src= {gamesToggle('9')} id="pearl_logo" alt="game logo" onClick={sendGame} data-value = "pearl"></img> 
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="black"> 
-                    <img src= {blackToggle} id="black_logo" alt="game logo" onClick={sendGame} data-value = "black"></img> 
+                    <img src= {gamesToggle('10')} id="black_logo" alt="game logo" onClick={sendGame} data-value = "black"></img> 
                 </button> &nbsp;
                 <button type= "button" className="game_logo" id="white"> 
-                    <img src= {whiteToggle} id="white_logo" alt="game logo" onClick={sendGame} data-value = "white"></img> 
+                    <img src= {gamesToggle('11')} id="white_logo" alt="game logo" onClick={sendGame} data-value = "white"></img> 
                 </button> &nbsp;
             </div>
 
