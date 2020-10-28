@@ -31,10 +31,7 @@ const UseraccountComponent: React.FC = () => {
     }
 
 
-    async function hello(){
-        console.log("Inside async function")
-        return "Hello";
-    }
+    
 
     /** sendGame function triggered on game button press */
     const sendGame = (evt: any) =>{
