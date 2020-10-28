@@ -102,15 +102,15 @@ const UseraccountComponent: React.FC = () => {
 
 
             <Table striped hover responsive="sm" >
-            
-                <tbody>
+                
+                {<tbody>
                     <tr className="table-warning">
                     <td className = "table_pokemon_id">1</td>
                     <td className = "table_pokemon_image"><img src = {pokemon1} onClick={pokeOwned}></img></td>
                     <td className = "table_pokemon_name">Bulbasaur</td>
                     <td className = "table_pokemon_logo">&#123;Game Logos&#125;</td>
                     </tr>
-                </tbody>
+                </tbody>}
 
                 
             </Table>
