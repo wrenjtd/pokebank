@@ -14,7 +14,7 @@ const UseraccountComponent: React.FC = () => {
 
 
     /** Pokemon */
-
+    // Get pokemon imagaes from ./images/pokemon/gen_1/pokemon
     const [pokemon1, setPokemon1] = useState(`https://raw.githubusercontent.com/wrenjtd/pokebank/master/pokebank/src/components/images/pokemon/gen_1/pokemon/${setPokemonNum}.png`);
     
 
